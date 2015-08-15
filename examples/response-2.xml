@@ -1,0 +1,42 @@
+------=_Part_10_289860323.1439664365614
+Content-Type: text/xml; charset=utf-8
+ 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:id="http://x-road.eu/xsd/identifiers" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd">
+    <SOAP-ENV:Header>
+        <xrd:client id:objectType="SUBSYSTEM">
+            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:memberClass>GOV</id:memberClass>
+            <id:memberCode>123456-7</id:memberCode>
+            <id:subsystemCode>TestClient</id:subsystemCode>
+        </xrd:client>
+        <xrd:service id:objectType="SERVICE">
+            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:memberClass>GOV</id:memberClass>
+            <id:memberCode>0245437-2</id:memberCode>
+            <id:subsystemCode>TestService</id:subsystemCode>
+            <id:serviceCode>testService</id:serviceCode>
+            <id:serviceVersion>v1</id:serviceVersion>
+        </xrd:service>
+        <xrd:userId>test</xrd:userId>
+        <xrd:id>ID11234</xrd:id>
+        <xrd:protocolVersion>4.0</xrd:protocolVersion>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ts1:testServiceResponse xmlns:ts1="http://test.x-road.fi/producer">
+            <ts1:request>
+                <ts1:responseBodySize>25</ts1:responseBodySize>
+                <ts1:responseAttachmentSize>25</ts1:responseAttachmentSize>
+            </ts1:request>
+            <ts1:response>
+                <ts1:data>q7aDewPHYwHvQn6ucP  tmw0H</ts1:data>
+                <ts1:processingTime>0</ts1:processingTime>
+            </ts1:response>
+        </ts1:testServiceResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+------=_Part_10_289860323.1439664365614
+Content-Type: application/xml
+Content-ID: attachment_id
+  
+<attachment>vHlO46R79xDCxkWyGu4wD2Ds8</attachment>
+------=_Part_10_289860323.1439664365614--
