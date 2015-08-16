@@ -45,6 +45,8 @@ Setting up development environment is explained in [wiki](https://github.com/pet
 
 ### Installation
 
+See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building-the-Code) for building the code.
+
 #### JAR
 
 * Build the project and produce ```test-service-0.0.2-SNAPSHOT.jar``` file.
