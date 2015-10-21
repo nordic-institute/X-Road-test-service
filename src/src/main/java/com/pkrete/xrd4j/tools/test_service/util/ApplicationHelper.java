@@ -3,6 +3,7 @@ package com.pkrete.xrd4j.tools.test_service.util;
 import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  * This class offers helper methods for the application.
@@ -12,7 +13,6 @@ import org.slf4j.LoggerFactory;
 public class ApplicationHelper {
 
     private static final Logger logger = LoggerFactory.getLogger(ApplicationHelper.class);
-    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
 
     /**
      * Returns a random string of given length.
@@ -22,13 +22,9 @@ public class ApplicationHelper {
      */
     public static String getRandomString(int length) {
         logger.debug("Generate random string of {} charaters.", length);
-        Random random = new Random();
-        StringBuilder sb = new StringBuilder();
-        while (sb.toString().getBytes().length < length) {
-            sb.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
-        }
-        logger.debug("String generated.");
-        return sb.toString();
+        String s = RandomStringUtils.randomAlphanumeric(length);
+        logger.debug("String generated");
+        return s;
     }
 
     /**
