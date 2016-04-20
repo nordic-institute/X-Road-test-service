@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pkrete.xrd4j.tools</groupId>
     <artifactId>test-service</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>X-Road Test Service</name>
     <inceptionYear>2015</inceptionYear>
     <description>
@@ -13,7 +13,7 @@
     <url>https://github.com/petkivim/x-road-test-service</url>
     <packaging>war</packaging>
     <properties>
-        <xrd4j.version>0.0.6</xrd4j.version>
+        <xrd4j.version>0.0.11</xrd4j.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.16</log4j.version>
         <jdk.version>1.7</jdk.version>
