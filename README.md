@@ -49,12 +49,12 @@ See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building
 
 #### JAR
 
-* Build the project and produce ```test-service-0.0.2-SNAPSHOT.jar``` file.
-* Run the application: ```$ java -jar test-service-0.0.2-SNAPSHOT.jar```.
+* Build the project and produce ```test-service-0.0.3-SNAPSHOT.jar``` file.
+* Run the application: ```$ java -jar test-service-0.0.3-SNAPSHOT.jar```.
 
 #### WAR
 
-* Build the project and produce ```test-service-0.0.2-SNAPSHOT.war``` file.
+* Build the project and produce ```test-service-0.0.3-SNAPSHOT.war``` file.
 * Copy the file ```tomcat.home/webapps``` folder.
 * Start/restart Tomcat.
 
@@ -63,19 +63,19 @@ See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building
 After installation (both JAR and WAR) the application is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.2-SNAPSHOT/Endpoint
+http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.2-SNAPSHOT/Endpoint?wsdl
+http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint?wsdl
 ```
 
 **N.B.** If you want to connect the services to X-Road Security Server you must update your server's IP address / host name to the WSDL file. Look for the below line and replace the default URL with your server's IP / host name.
 
 ```
-<soap:address location="http://localhost:8080/test-service-0.0.2-SNAPSHOT/Endpoint" />
+<soap:address location="http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint" />
 ```
 
 ### Usage
@@ -87,7 +87,7 @@ Calling the service after installation when Tomcat is running.
 SOAP [request](https://github.com/petkivim/x-road-test-service/blob/master/examples/request-1.xml) can be found in the ```examples``` folder.
 
 ```
-curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/test-service-0.0.2-SNAPSHOT/Endpoint
+curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint
 ```
 
 Example SOAP [response](https://github.com/petkivim/x-road-test-service/blob/master/examples/response-1.xml) can be found in the ```examples``` folder.
