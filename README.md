@@ -22,16 +22,16 @@ In addition to the characters specified in the request, the response alsp contai
 
 ### Try It Out
 
-The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.1/test-service-0.0.1.jar) the executable jar version (```test-service-0.0.1.jar```) and run it: ```java -jar test-service-0.0.1.jar```. The application is accessible at:
+The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.2/test-service-0.0.2.jar) the executable jar version (```test-service-0.0.2.jar```) and run it: ```java -jar test-service-0.0.2.jar```. The application is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.1/Endpoint
+http://localhost:8080/test-service-0.0.2/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.1/Endpoint?wsdl
+http://localhost:8080/test-service-0.0.2/Endpoint?wsdl
 ```
 
 ### Software Requirements
