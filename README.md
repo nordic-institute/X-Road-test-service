@@ -34,6 +34,18 @@ The WSDL description is accessible at:
 http://localhost:8080/test-service-0.0.2/Endpoint?wsdl
 ```
 
+### Docker
+
+Test Service version 0.0.2 is also available as Docker image.
+
+```
+docker run -p 8080:8080 petkivim/x-road-test-service
+```
+
+If you're using Docker on Linux natively, then the web app should now be listening on port 8080 on your Docker daemon host. If http://0.0.0.0:8080 doesn't resolve, you can also try http://localhost:8080.
+
+On Windows use ```docker-machine ip``` command to get Docker host's IP address.
+
 ### Software Requirements
 
 * Java 6 or later
