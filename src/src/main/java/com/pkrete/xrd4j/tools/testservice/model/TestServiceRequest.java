@@ -1,4 +1,4 @@
-package com.pkrete.xrd4j.tools.test_service.model;
+package com.pkrete.xrd4j.tools.testservice.model;
 
 /**
  * This class represents a test service request.

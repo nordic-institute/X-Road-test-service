@@ -1,4 +1,4 @@
-package com.pkrete.xrd4j.tools.test_service.util;
+package com.pkrete.xrd4j.tools.testservice.util;
 
 import java.util.Random;
 import org.slf4j.Logger;

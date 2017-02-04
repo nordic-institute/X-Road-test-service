@@ -1,4 +1,4 @@
-package com.pkrete.xrd4j.tools.test_service;
+package com.pkrete.xrd4j.tools.testservice;
 
 import com.pkrete.xrd4j.common.exception.XRd4JException;
 import com.pkrete.xrd4j.common.message.ErrorMessage;
@@ -10,9 +10,9 @@ import com.pkrete.xrd4j.server.deserializer.AbstractCustomRequestDeserializer;
 import com.pkrete.xrd4j.server.deserializer.CustomRequestDeserializer;
 import com.pkrete.xrd4j.server.serializer.AbstractServiceResponseSerializer;
 import com.pkrete.xrd4j.server.serializer.ServiceResponseSerializer;
-import com.pkrete.xrd4j.tools.test_service.model.TestServiceRequest;
-import com.pkrete.xrd4j.tools.test_service.model.TestServiceResponse;
-import com.pkrete.xrd4j.tools.test_service.util.ApplicationHelper;
+import com.pkrete.xrd4j.tools.testservice.model.TestServiceRequest;
+import com.pkrete.xrd4j.tools.testservice.model.TestServiceResponse;
+import com.pkrete.xrd4j.tools.testservice.util.ApplicationHelper;
 import java.util.Properties;
 import javax.xml.soap.AttachmentPart;
 import javax.xml.soap.Node;
