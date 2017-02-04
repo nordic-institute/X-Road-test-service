@@ -32,13 +32,13 @@ import org.slf4j.LoggerFactory;
  * @author Petteri Kivimäki
  */
 public class Endpoint extends AbstractAdapterServlet {
-    
+
     private Properties props;
-    private final static Logger logger = LoggerFactory.getLogger(Endpoint.class);
+    private static final Logger logger = LoggerFactory.getLogger(Endpoint.class);
     private String namespaceSerialize;
     private String namespaceDeserialize;
     private String prefix;
-    
+
     @Override
     public void init() {
         super.init();
@@ -64,15 +64,15 @@ public class Endpoint extends AbstractAdapterServlet {
         logger.debug("WSDL path : \"" + path + "\".");
         return path;
     }
-    
+
     @Override
     protected ServiceResponse handleRequest(ServiceRequest request) throws SOAPException, XRd4JException {
         long startTime = System.currentTimeMillis();
-        ServiceResponseSerializer serializer = null;
-        ServiceResponse<TestServiceRequest, TestServiceResponse> response = null;
+        ServiceResponseSerializer serializer;
+        ServiceResponse<TestServiceRequest, TestServiceResponse> response;
 
         // Process services by service code
-        if (request.getProducer().getServiceCode().equals("testService")) {
+        if ("testService".equals(request.getProducer().getServiceCode())) {
             // Process "helloService" service
             logger.info("Process \"testService\" service.");
             // Create a new response serializer that serializes the response
@@ -84,7 +84,7 @@ public class Endpoint extends AbstractAdapterServlet {
             // Parse the request data from the request
             customDeserializer.deserialize(request, this.namespaceDeserialize);
             // Create a new ServiceResponse object
-            response = new ServiceResponse<TestServiceRequest, TestServiceResponse>(request.getConsumer(), request.getProducer(), request.getId());
+            response = new ServiceResponse<>(request.getConsumer(), request.getProducer(), request.getId());
             // Set namespace of the SOAP response
             response.getProducer().setNamespaceUrl(this.namespaceSerialize);
             response.getProducer().setNamespacePrefix(this.prefix);
@@ -131,7 +131,7 @@ public class Endpoint extends AbstractAdapterServlet {
      * service responses.
      */
     private class TestServiceResponseSerializer extends AbstractServiceResponseSerializer {
-        
+
         @Override
         /**
          * Serializes the response data.
@@ -187,12 +187,12 @@ public class Endpoint extends AbstractAdapterServlet {
             for (int i = 0; i < requestNode.getChildNodes().getLength(); i++) {
                 // Request data is inside of "name" element
                 if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
-                        && requestNode.getChildNodes().item(i).getLocalName().equals("responseBodySize")) {
+                        && "responseBodySize".equals(requestNode.getChildNodes().item(i).getLocalName())) {
                     logger.debug("Found \"responseBodySize\" element.");
                     // "responseBodySize" element was found - set value
                     request.setResponseBodySize(requestNode.getChildNodes().item(i).getTextContent());
                 } else if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
-                        && requestNode.getChildNodes().item(i).getLocalName().equals("responseAttachmentSize")) {
+                        && "responseAttachmentSize".equals(requestNode.getChildNodes().item(i).getLocalName())) {
                     logger.debug("Found \"responseAttachmentSize\" element.");
                     // "responseAttachmentSize" element was found - set value
                     request.setResponseAttachmentSize(requestNode.getChildNodes().item(i).getTextContent());
