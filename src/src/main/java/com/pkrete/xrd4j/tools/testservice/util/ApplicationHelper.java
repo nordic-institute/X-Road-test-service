@@ -1,6 +1,5 @@
 package com.pkrete.xrd4j.tools.testservice.util;
 
-import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -13,6 +12,14 @@ import org.apache.commons.lang3.RandomStringUtils;
 public class ApplicationHelper {
 
     private static final Logger logger = LoggerFactory.getLogger(ApplicationHelper.class);
+
+    /**
+     * Constructs and initializes a new ApplicationHelper object. Should never
+     * be used.
+     */
+    private ApplicationHelper() {
+
+    }
 
     /**
      * Returns a random string of given length.
