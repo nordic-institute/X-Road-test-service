@@ -143,27 +143,6 @@
                     <charset>utf-8</charset>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.2</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <filesToInclude>
-                        target/classes/test-service.wsdl,target/${project.build.finalName}/WEB-INF/classes/test-service.wsdl
-                    </filesToInclude>
-                    <regex>false</regex>
-                    <token>$END_POINT$</token>
-                    <value>${project.build.finalName}</value>
-                </configuration>
-            </plugin>
         </plugins>
         <defaultGoal>package</defaultGoal>
         <resources>
