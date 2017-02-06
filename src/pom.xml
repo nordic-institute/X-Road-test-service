@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pkrete.xrd4j.tools</groupId>
     <artifactId>test-service</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <name>X-Road Test Service</name>
     <inceptionYear>2015</inceptionYear>
     <description>
