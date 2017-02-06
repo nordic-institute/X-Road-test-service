@@ -87,7 +87,7 @@ http://localhost:8080/test-service-0.0.4-SNAPSHOT/Endpoint?wsdl
 **N.B.** If you want to connect the services to X-Road Security Server you must update your server's IP address / host name to the WSDL file. Look for the below line and replace the default URL with your server's IP / host name.
 
 ```
-<soap:address location="http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint" />
+<soap:address location="http://localhost:8080/test-service-0.0.4-SNAPSHOT/Endpoint" />
 ```
 
 ### Usage
