@@ -22,16 +22,16 @@ In addition to the characters specified in the request, the response alsp contai
 
 ### Try It Out
 
-The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.2/test-service-0.0.2.jar) the executable jar version (```test-service-0.0.2.jar```) and run it: ```java -jar test-service-0.0.2.jar```. The application is accessible at:
+The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.2/Endpoint
+http://localhost:8080/test-service-0.0.3/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.2/Endpoint?wsdl
+http://localhost:8080/test-service-0.0.3/Endpoint?wsdl
 ```
 
 ### Docker
@@ -48,8 +48,8 @@ On Windows use ```docker-machine ip``` command to get Docker host's IP address.
 
 ### Software Requirements
 
-* Java 6 or later
-* Tomcat 6 or later
+* Java 7 or later
+* Tomcat 7 or later
 
 ### Development Environment
 
@@ -61,12 +61,12 @@ See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building
 
 #### JAR
 
-* Build the project and produce ```test-service-0.0.3-SNAPSHOT.jar``` file.
-* Run the application: ```$ java -jar test-service-0.0.3-SNAPSHOT.jar```.
+* Build the project and produce ```test-service-0.0.4-SNAPSHOT.jar``` file.
+* Run the application: ```$ java -jar test-service-0.0.4-SNAPSHOT.jar```.
 
 #### WAR
 
-* Build the project and produce ```test-service-0.0.3-SNAPSHOT.war``` file.
+* Build the project and produce ```test-service-0.0.4-SNAPSHOT.war``` file.
 * Copy the file ```tomcat.home/webapps``` folder.
 * Start/restart Tomcat.
 
@@ -75,13 +75,13 @@ See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building
 After installation (both JAR and WAR) the application is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint
+http://localhost:8080/test-service-0.0.4-SNAPSHOT/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint?wsdl
+http://localhost:8080/test-service-0.0.4-SNAPSHOT/Endpoint?wsdl
 ```
 
 **N.B.** If you want to connect the services to X-Road Security Server you must update your server's IP address / host name to the WSDL file. Look for the below line and replace the default URL with your server's IP / host name.
