@@ -1,8 +1,8 @@
 # X-Road Test Service
 
-X-Road Test Service is a testing tool for X-Road v6.4 and above. The implementation is based on [XRd4J](https://github.com/petkivim/xrd4j) library. 
+X-Road Test Service is a testing tool for X-Road v6.4 and above. The implementation is based on [XRd4J](https://github.com/nordic-institute/xrd4j) library. 
 
-Test Service application provides a single service that takes as parameters the size of the response body and the size of the response attachment part. The size defines the number of characters in the response. For example, the below request generates a response which SOAP body contains 25 characters (see full [request](https://github.com/petkivim/x-road-test-service/blob/master/examples/request-1.xml)).
+Test Service application provides a single service that takes as parameters the size of the response body and the size of the response attachment part. The size defines the number of characters in the response. For example, the below request generates a response which SOAP body contains 25 characters (see full [request](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/request-1.xml)).
 
 ```
 <request>
@@ -11,7 +11,7 @@ Test Service application provides a single service that takes as parameters the 
 </request>
 ```
 
-In addition to the characters specified in the request, the response alsp contains the time that was used for generating the requested string  (see full [response](https://github.com/petkivim/x-road-test-service/blob/master/examples/response-1.xml)).
+In addition to the characters specified in the request, the response contains the time that was used for generating the requested string  (see full [response](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/response-1.xml)).
 
 ```
 <response>
@@ -22,7 +22,7 @@ In addition to the characters specified in the request, the response alsp contai
 
 ### Try It Out
 
-The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
+The fastest and easiest way to try out the application is to [download](https://github.com/nordic-institute/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
 
 ```
 http://localhost:8080/test-service-0.0.3/Endpoint
@@ -53,11 +53,11 @@ On Windows use ```docker-machine ip``` command to get Docker host's IP address.
 
 ### Development Environment
 
-Setting up development environment is explained in [wiki](https://github.com/petkivim/x-road-test-service/wiki/Setting-up-Development-Environment).
+Setting up development environment is explained in [documentation](documentation/Setting-up-Development-Environment.md).
 
 ### Installation
 
-See [instructions](https://github.com/petkivim/x-road-test-service/wiki/Building-the-Code) for building the code.
+See [instructions](documentation/Building-the-Code.md) for building the code.
 
 #### JAR
 
@@ -96,10 +96,10 @@ Calling the service after installation when Tomcat is running.
 
 #### testService
 
-SOAP [request](https://github.com/petkivim/x-road-test-service/blob/master/examples/request-1.xml) can be found in the ```examples``` folder.
+SOAP [request](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/request-1.xml) can be found in the ```examples``` folder.
 
 ```
 curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint
 ```
 
-Example SOAP [response](https://github.com/petkivim/x-road-test-service/blob/master/examples/response-1.xml) can be found in the ```examples``` folder.
+Example SOAP [response](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/response-1.xml) can be found in the ```examples``` folder.
