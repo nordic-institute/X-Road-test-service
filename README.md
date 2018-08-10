@@ -103,3 +103,8 @@ curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhos
 ```
 
 Example SOAP [response](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/response-1.xml) can be found in the ```examples``` folder.
+
+## Credits
+
+* X-Road Test Service library was originally developed by Petteri Kivimäki (https://github.com/petkivim) during 2015-2018. 
+* In August 2018 it was agreed that Nordic Institute for Interoperability Solutions (NIIS) takes maintenance responsibility.
