@@ -22,7 +22,7 @@ In addition to the characters specified in the request, the response contains th
 
 ### Try It Out
 
-The fastest and easiest way to try out the application is to [download](https://github.com/nordic-institute/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
+The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
 
 ```
 http://localhost:8080/test-service-0.0.3/Endpoint
