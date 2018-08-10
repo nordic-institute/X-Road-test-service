@@ -1,13 +1,13 @@
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:id="http://x-road.eu/xsd/identifiers" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd">
     <SOAP-ENV:Header>
         <xrd:client id:objectType="SUBSYSTEM">
-            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:xRoadInstance>NIIS-TEST</id:xRoadInstance>
             <id:memberClass>GOV</id:memberClass>
             <id:memberCode>123456-7</id:memberCode>
             <id:subsystemCode>TestClient</id:subsystemCode>
         </xrd:client>
         <xrd:service id:objectType="SERVICE">
-            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:xRoadInstance>NIIS-TEST</id:xRoadInstance>
             <id:memberClass>GOV</id:memberClass>
             <id:memberCode>0245437-2</id:memberCode>
             <id:subsystemCode>TestService</id:subsystemCode>
@@ -19,7 +19,7 @@
         <xrd:protocolVersion>4.0</xrd:protocolVersion>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
-        <ns1:testService xmlns:ns1="http://test.x-road.fi/producer">
+        <ns1:testService xmlns:ns1="http://test.x-road.global/producer">
             <ns1:request>
                 <ns1:responseBodySize>25</ns1:responseBodySize>
                 <ns1:responseAttachmentSize>0</ns1:responseAttachmentSize>
