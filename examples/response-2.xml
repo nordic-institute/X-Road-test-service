@@ -4,13 +4,13 @@ Content-Type: text/xml; charset=utf-8
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:id="http://x-road.eu/xsd/identifiers" xmlns:xrd="http://x-road.eu/xsd/xroad.xsd">
     <SOAP-ENV:Header>
         <xrd:client id:objectType="SUBSYSTEM">
-            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:xRoadInstance>NIIS-TEST</id:xRoadInstance>
             <id:memberClass>GOV</id:memberClass>
             <id:memberCode>123456-7</id:memberCode>
             <id:subsystemCode>TestClient</id:subsystemCode>
         </xrd:client>
         <xrd:service id:objectType="SERVICE">
-            <id:xRoadInstance>FI-DEV</id:xRoadInstance>
+            <id:xRoadInstance>NIIS-TEST</id:xRoadInstance>
             <id:memberClass>GOV</id:memberClass>
             <id:memberCode>0245437-2</id:memberCode>
             <id:subsystemCode>TestService</id:subsystemCode>
@@ -22,7 +22,7 @@ Content-Type: text/xml; charset=utf-8
         <xrd:protocolVersion>4.0</xrd:protocolVersion>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
-        <ts1:testServiceResponse xmlns:ts1="http://test.x-road.fi/producer">
+        <ts1:testServiceResponse xmlns:ts1="http://test.x-road.global/producer">
             <ts1:request>
                 <ts1:responseBodySize>25</ts1:responseBodySize>
                 <ts1:responseAttachmentSize>25</ts1:responseAttachmentSize>

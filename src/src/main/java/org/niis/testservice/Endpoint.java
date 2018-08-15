@@ -1,4 +1,26 @@
-package com.pkrete.xrd4j.tools.testservice;
+/*
+ * The MIT License
+ * Copyright © 2018 Nordic Institute for Interoperability Solutions (NIIS)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+package org.niis.testservice;
 
 import com.pkrete.xrd4j.common.exception.XRd4JException;
 import com.pkrete.xrd4j.common.message.ErrorMessage;
@@ -10,9 +32,9 @@ import com.pkrete.xrd4j.server.deserializer.AbstractCustomRequestDeserializer;
 import com.pkrete.xrd4j.server.deserializer.CustomRequestDeserializer;
 import com.pkrete.xrd4j.server.serializer.AbstractServiceResponseSerializer;
 import com.pkrete.xrd4j.server.serializer.ServiceResponseSerializer;
-import com.pkrete.xrd4j.tools.testservice.model.TestServiceRequest;
-import com.pkrete.xrd4j.tools.testservice.model.TestServiceResponse;
-import com.pkrete.xrd4j.tools.testservice.util.ApplicationHelper;
+import org.niis.testservice.model.TestServiceRequest;
+import org.niis.testservice.model.TestServiceResponse;
+import org.niis.testservice.util.ApplicationHelper;
 import java.util.Properties;
 import javax.xml.soap.AttachmentPart;
 import javax.xml.soap.Node;

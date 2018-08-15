@@ -55,3 +55,6 @@ $RECYCLE.BIN/
 # Target dir
 src/target/
 src/.extract/
+
+# IntelliJ Idea
+.idea/

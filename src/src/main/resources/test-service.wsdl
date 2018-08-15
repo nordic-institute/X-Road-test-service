@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://test.x-road.fi/producer"
+                  xmlns:tns="http://test.x-road.global/producer"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:xrd="http://x-road.eu/xsd/xroad.xsd"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:id="http://x-road.eu/xsd/identifiers"
-                  name="testService" targetNamespace="http://test.x-road.fi/producer">
+                  name="testService" targetNamespace="http://test.x-road.global/producer">
     <wsdl:types>
         <!-- Schema for identifiers (reduced) -->
         <xsd:schema elementFormDefault="qualified"
@@ -102,7 +102,7 @@
         </xsd:schema>
 
         <!-- Schema for requests (reduced) -->
-        <xsd:schema targetNamespace="http://test.x-road.fi/producer">
+        <xsd:schema targetNamespace="http://test.x-road.global/producer">
             <xsd:element name="testService">
                 <xsd:complexType>
                     <xsd:sequence>

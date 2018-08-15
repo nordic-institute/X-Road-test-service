@@ -2,15 +2,15 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pkrete.xrd4j.tools</groupId>
+    <groupId>org.niis</groupId>
     <artifactId>test-service</artifactId>
     <version>0.0.4-SNAPSHOT</version>
     <name>X-Road Test Service</name>
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2018</inceptionYear>
     <description>
         This project provides a test service for X-Road version 6.
     </description>
-    <url>https://github.com/petkivim/x-road-test-service</url>
+    <url>https://github.com/nordic-institute/x-road-test-service</url>
     <packaging>war</packaging>
     <properties>
         <xrd4j.version>0.0.16</xrd4j.version>
@@ -79,11 +79,20 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:petkivim/x-road-test-service.git</connection>
-        <developerConnection>scm:git:git@github.com:petkivim/x-road-test-service.git</developerConnection>
-        <url>git@github.com:petkivim/x-road-test-service.git</url>
+        <connection>scm:git:git@github.com:nordic-institute/x-road-test-service.git</connection>
+        <developerConnection>scm:git:git@github.com:nordic-institute/x-road-test-service.git</developerConnection>
+        <url>git@github.com:nordic-institute/x-road-test-service.git</url>
     </scm>
     <developers>
+        <developer>
+            <id>niis</id>
+            <name>Nordic Institute for Interoperability Solutions (NIIS)</name>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+2</timezone>
+        </developer>
         <developer>
             <id>petkivim</id>
             <name>Petteri Kivimäki</name>
@@ -142,6 +151,33 @@
                     <finalName>${project.artifactId}-${project.version}.jar</finalName>
                     <charset>utf-8</charset>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <header>com/mycila/maven/plugin/license/templates/MIT.txt</header>
+                    <properties>
+                        <owner>Nordic Institute for Interoperability Solutions (NIIS)</owner>
+                    </properties>
+                    <skipExistingHeaders>false</skipExistingHeaders>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <mapping>
+                        <java>SLASHSTAR_STYLE</java>
+                    </mapping>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>license-headers</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <defaultGoal>package</defaultGoal>
