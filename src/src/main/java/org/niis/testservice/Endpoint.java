@@ -22,20 +22,21 @@
  */
 package org.niis.testservice;
 
-import com.pkrete.xrd4j.common.exception.XRd4JException;
-import com.pkrete.xrd4j.common.message.ErrorMessage;
-import com.pkrete.xrd4j.common.message.ServiceRequest;
-import com.pkrete.xrd4j.common.message.ServiceResponse;
-import com.pkrete.xrd4j.common.util.PropertiesUtil;
-import com.pkrete.xrd4j.server.AbstractAdapterServlet;
-import com.pkrete.xrd4j.server.deserializer.AbstractCustomRequestDeserializer;
-import com.pkrete.xrd4j.server.deserializer.CustomRequestDeserializer;
-import com.pkrete.xrd4j.server.serializer.AbstractServiceResponseSerializer;
-import com.pkrete.xrd4j.server.serializer.ServiceResponseSerializer;
+import org.niis.xrd4j.common.exception.XRd4JException;
+import org.niis.xrd4j.common.message.ErrorMessage;
+import org.niis.xrd4j.common.message.ServiceRequest;
+import org.niis.xrd4j.common.message.ServiceResponse;
+import org.niis.xrd4j.common.util.PropertiesUtil;
+import org.niis.xrd4j.server.AbstractAdapterServlet;
+import org.niis.xrd4j.server.deserializer.AbstractCustomRequestDeserializer;
+import org.niis.xrd4j.server.deserializer.CustomRequestDeserializer;
+import org.niis.xrd4j.server.serializer.AbstractServiceResponseSerializer;
+import org.niis.xrd4j.server.serializer.ServiceResponseSerializer;
 import org.niis.testservice.model.TestServiceRequest;
 import org.niis.testservice.model.TestServiceResponse;
 import org.niis.testservice.util.ApplicationHelper;
 import java.util.Properties;
+import javax.servlet.ServletException;
 import javax.xml.soap.AttachmentPart;
 import javax.xml.soap.Node;
 import javax.xml.soap.SOAPElement;
@@ -62,7 +63,7 @@ public class Endpoint extends AbstractAdapterServlet {
     private String prefix;
 
     @Override
-    public void init() {
+    public void init() throws ServletException {
         super.init();
         logger.debug("Starting to initialize Enpoint.");
         this.props = PropertiesUtil.getInstance().load("/test-service.properties");
