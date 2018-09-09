@@ -22,18 +22,18 @@
  */
 package org.niis.testservice.util;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  * This class offers helper methods for the application.
  *
  * @author Petteri Kivimäki
  */
-public class ApplicationHelper {
+public final class ApplicationHelper {
 
-    private static final Logger logger = LoggerFactory.getLogger(ApplicationHelper.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ApplicationHelper.class);
 
     /**
      * Constructs and initializes a new ApplicationHelper object. Should never
@@ -50,9 +50,9 @@ public class ApplicationHelper {
      * @return random string
      */
     public static String getRandomString(int length) {
-        logger.debug("Generate random string of {} charaters.", length);
+        LOG.debug("Generate random string of {} charaters.", length);
         String s = RandomStringUtils.randomAlphanumeric(length);
-        logger.debug("String generated");
+        LOG.debug("String generated");
         return s;
     }
 

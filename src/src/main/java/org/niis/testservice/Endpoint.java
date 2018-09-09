@@ -22,6 +22,9 @@
  */
 package org.niis.testservice;
 
+import org.niis.testservice.model.TestServiceRequest;
+import org.niis.testservice.model.TestServiceResponse;
+import org.niis.testservice.util.ApplicationHelper;
 import org.niis.xrd4j.common.exception.XRd4JException;
 import org.niis.xrd4j.common.message.ErrorMessage;
 import org.niis.xrd4j.common.message.ServiceRequest;
@@ -32,10 +35,10 @@ import org.niis.xrd4j.server.deserializer.AbstractCustomRequestDeserializer;
 import org.niis.xrd4j.server.deserializer.CustomRequestDeserializer;
 import org.niis.xrd4j.server.serializer.AbstractServiceResponseSerializer;
 import org.niis.xrd4j.server.serializer.ServiceResponseSerializer;
-import org.niis.testservice.model.TestServiceRequest;
-import org.niis.testservice.model.TestServiceResponse;
-import org.niis.testservice.util.ApplicationHelper;
-import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.xml.soap.AttachmentPart;
 import javax.xml.soap.Node;
@@ -43,8 +46,8 @@ import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
 
 /**
  * This class implements single X-Road v6 compatible service: "testService".
@@ -57,7 +60,7 @@ import org.slf4j.LoggerFactory;
 public class Endpoint extends AbstractAdapterServlet {
 
     private Properties props;
-    private static final Logger logger = LoggerFactory.getLogger(Endpoint.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Endpoint.class);
     private String namespaceSerialize;
     private String namespaceDeserialize;
     private String prefix;
@@ -65,15 +68,15 @@ public class Endpoint extends AbstractAdapterServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        logger.debug("Starting to initialize Enpoint.");
+        LOG.debug("Starting to initialize Enpoint.");
         this.props = PropertiesUtil.getInstance().load("/test-service.properties");
         this.namespaceSerialize = this.props.getProperty("namespace.serialize");
         this.namespaceDeserialize = this.props.getProperty("namespace.deserialize");
         this.prefix = this.props.getProperty("namespace.prefix.serialize");
-        logger.debug("Namespace for incoming ServiceRequests : \"" + this.namespaceDeserialize + "\".");
-        logger.debug("Namespace for outgoing ServiceResponses : \"" + this.namespaceSerialize + "\".");
-        logger.debug("Namespace prefix for outgoing ServiceResponses : \"" + this.prefix + "\".");
-        logger.debug("Endpoint initialized.");
+        LOG.debug("Namespace for incoming ServiceRequests : \"" + this.namespaceDeserialize + "\".");
+        LOG.debug("Namespace for outgoing ServiceResponses : \"" + this.namespaceSerialize + "\".");
+        LOG.debug("Namespace prefix for outgoing ServiceResponses : \"" + this.prefix + "\".");
+        LOG.debug("Endpoint initialized.");
     }
 
     /**
@@ -84,7 +87,7 @@ public class Endpoint extends AbstractAdapterServlet {
     @Override
     protected String getWSDLPath() {
         String path = this.props.getProperty("wsdl.path");
-        logger.debug("WSDL path : \"" + path + "\".");
+        LOG.debug("WSDL path : \"" + path + "\".");
         return path;
     }
 
@@ -97,7 +100,7 @@ public class Endpoint extends AbstractAdapterServlet {
         // Process services by service code
         if ("testService".equals(request.getProducer().getServiceCode())) {
             // Process "helloService" service
-            logger.info("Process \"testService\" service.");
+            LOG.info("Process \"testService\" service.");
             // Create a new response serializer that serializes the response
             // to SOAP
             serializer = new TestServiceResponseSerializer();
@@ -111,7 +114,7 @@ public class Endpoint extends AbstractAdapterServlet {
             // Set namespace of the SOAP response
             response.getProducer().setNamespaceUrl(this.namespaceSerialize);
             response.getProducer().setNamespacePrefix(this.prefix);
-            logger.debug("Start message prosessing.");
+            LOG.debug("Start message prosessing.");
             if (request.getRequestData() != null) {
                 // Get the request object
                 TestServiceRequest serviceRequest = (TestServiceRequest) request.getRequestData();
@@ -124,11 +127,11 @@ public class Endpoint extends AbstractAdapterServlet {
                 response.setResponseData(serviceResponse);
             } else {
                 // No request data is found - an error message is returned
-                logger.warn("No \"name\" parameter found. Return a non-techinal error message.");
+                LOG.warn("No \"name\" parameter found. Return a non-techinal error message.");
                 ErrorMessage error = new ErrorMessage("422", "422 Unprocessable Entity. Missing \"name\" element.");
                 response.setErrorMessage(error);
             }
-            logger.debug("Message prosessing done!");
+            LOG.debug("Message prosessing done!");
             // Get processing time
             long processingTime = System.currentTimeMillis() - startTime;
             // Set processing time
@@ -178,7 +181,8 @@ public class Endpoint extends AbstractAdapterServlet {
 
             // Add attachment
             if (serviceResponse.getResponseAttachment() != null && !serviceResponse.getResponseAttachment().isEmpty()) {
-                AttachmentPart attachPart = response.getSoapMessage().createAttachmentPart("<attachment>" + serviceResponse.getResponseAttachment() + "</attachment>", "application/xml");
+                AttachmentPart attachPart = response.getSoapMessage()
+                        .createAttachmentPart("<attachment>" + serviceResponse.getResponseAttachment() + "</attachment>", "application/xml");
                 attachPart.setContentId("attachment_id");
                 response.getSoapMessage().addAttachmentPart(attachPart);
             }
@@ -201,7 +205,7 @@ public class Endpoint extends AbstractAdapterServlet {
         @Override
         protected TestServiceRequest deserializeRequest(Node requestNode, SOAPMessage message) throws SOAPException {
             if (requestNode == null) {
-                logger.warn("\"requestNode\" is null. Null is returned.");
+                LOG.warn("\"requestNode\" is null. Null is returned.");
                 return null;
             }
             // Create new TestServiceRequest object
@@ -211,17 +215,17 @@ public class Endpoint extends AbstractAdapterServlet {
                 // Request data is inside of "name" element
                 if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
                         && "responseBodySize".equals(requestNode.getChildNodes().item(i).getLocalName())) {
-                    logger.debug("Found \"responseBodySize\" element.");
+                    LOG.debug("Found \"responseBodySize\" element.");
                     // "responseBodySize" element was found - set value
                     request.setResponseBodySize(requestNode.getChildNodes().item(i).getTextContent());
                 } else if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
                         && "responseAttachmentSize".equals(requestNode.getChildNodes().item(i).getLocalName())) {
-                    logger.debug("Found \"responseAttachmentSize\" element.");
+                    LOG.debug("Found \"responseAttachmentSize\" element.");
                     // "responseAttachmentSize" element was found - set value
                     request.setResponseAttachmentSize(requestNode.getChildNodes().item(i).getTextContent());
                 }
             }
-            logger.warn("Return the TestServiceRequest object.");
+            LOG.warn("Return the TestServiceRequest object.");
             return request;
         }
     }
