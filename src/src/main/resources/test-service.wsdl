@@ -106,25 +106,19 @@
             <xsd:element name="testService">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="request">
-                            <xsd:complexType>
-                                <xsd:sequence>
-                                    <xsd:element name="responseBodySize" type="xsd:string">
-                                        <xsd:annotation>
-                                            <xsd:documentation>
-                                                Response body character count.
-                                            </xsd:documentation>
-                                        </xsd:annotation>
-                                    </xsd:element>
-                                    <xsd:element name="responseAttachmentSize" type="xsd:string">
-                                        <xsd:annotation>
-                                            <xsd:documentation>
-                                                Response attachment character count.
-                                            </xsd:documentation>
-                                        </xsd:annotation>
-                                    </xsd:element>
-                                </xsd:sequence>
-                            </xsd:complexType>
+                        <xsd:element name="responseBodySize" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    Response body character count.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="responseAttachmentSize" type="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    Response attachment character count.
+                                </xsd:documentation>
+                            </xsd:annotation>
                         </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
@@ -132,22 +126,8 @@
             <xsd:element name="testServiceResponse">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="request">
-                            <xsd:complexType>
-                                <xsd:sequence>
-                                    <xsd:element name="responseBodySize" nillable="true" type="xsd:string"/>
-                                    <xsd:element name="responseAttachmentSize" nillable="true" type="xsd:string"/>
-                                </xsd:sequence>
-                            </xsd:complexType>
-                        </xsd:element>
-                        <xsd:element name="response">
-                            <xsd:complexType>
-                                <xsd:sequence>
-                                    <xsd:element name="data" type="xsd:string" />
-                                    <xsd:element name="processingTime" type="xsd:string" />
-                                </xsd:sequence>
-                            </xsd:complexType>
-                        </xsd:element>
+                        <xsd:element name="data" type="xsd:string" />
+                        <xsd:element name="processingTime" type="xsd:string" />
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
