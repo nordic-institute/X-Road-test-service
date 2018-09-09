@@ -20,6 +20,8 @@ In addition to the characters specified in the request, the response contains th
 </response>
 ```
 
+**N.B.** Starting from version 0.0.4-SNAPSHOT `<request>/<response>` wrappers are no longer used. When using versions < 0.0.4-SNAPSHOT, `<request>/<response>` must be added manually to the example requests in `examples/` folder.
+
 ### Try It Out
 
 The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-test-service/releases/download/v0.0.3/test-service-0.0.3.jar) the executable jar version (```test-service-0.0.3.jar```) and run it: ```java -jar test-service-0.0.3.jar```. The application is accessible at:
@@ -99,7 +101,7 @@ Calling the service after installation when Tomcat is running.
 SOAP [request](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/request-1.xml) can be found in the ```examples``` folder.
 
 ```
-curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/test-service-0.0.3-SNAPSHOT/Endpoint
+curl -d @request-1.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/test-service-0.0.4-SNAPSHOT/Endpoint
 ```
 
 Example SOAP [response](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/response-1.xml) can be found in the ```examples``` folder.
