@@ -23,14 +23,8 @@ Content-Type: text/xml; charset=utf-8
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <ts1:testServiceResponse xmlns:ts1="http://test.x-road.global/producer">
-            <ts1:request>
-                <ts1:responseBodySize>25</ts1:responseBodySize>
-                <ts1:responseAttachmentSize>25</ts1:responseAttachmentSize>
-            </ts1:request>
-            <ts1:response>
-                <ts1:data>q7aDewPHYwHvQn6ucP  tmw0H</ts1:data>
-                <ts1:processingTime>0</ts1:processingTime>
-            </ts1:response>
+            <ts1:data>q7aDewPHYwHvQn6ucP  tmw0H</ts1:data>
+            <ts1:processingTime>0</ts1:processingTime>
         </ts1:testServiceResponse>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

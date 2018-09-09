@@ -20,10 +20,8 @@
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <ns1:testService xmlns:ns1="http://test.x-road.global/producer">
-            <ns1:request>
-                <ns1:responseBodySize>25</ns1:responseBodySize>
-                <ns1:responseAttachmentSize>0</ns1:responseAttachmentSize>
-            </ns1:request>
+            <ns1:responseBodySize>25</ns1:responseBodySize>
+            <ns1:responseAttachmentSize>0</ns1:responseAttachmentSize>
         </ns1:testService>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
