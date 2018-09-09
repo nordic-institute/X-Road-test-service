@@ -4,3 +4,4 @@
 - Update XRd4J dependency from `com.pkrete.xrd4j` to `org.niis.xrd4j`
 - Add OWASP dependency check Maven plugin
 - Add Checkstyle Maven plugin and configuration
+- Add `CHANGELOG.md`
