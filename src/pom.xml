@@ -13,7 +13,7 @@
     <url>https://github.com/nordic-institute/x-road-test-service</url>
     <packaging>war</packaging>
     <properties>
-        <xrd4j.version>0.0.16</xrd4j.version>
+        <xrd4j.version>0.3.0</xrd4j.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.16</log4j.version>
         <jdk.version>1.7</jdk.version>
@@ -22,12 +22,12 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.pkrete.xrd4j</groupId>
+            <groupId>org.niis.xrd4j</groupId>
             <artifactId>common</artifactId>
             <version>${xrd4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.pkrete.xrd4j</groupId>
+            <groupId>org.niis.xrd4j</groupId>
             <artifactId>server</artifactId>
             <version>${xrd4j.version}</version>
         </dependency>
@@ -190,9 +190,9 @@
     </build>
     <repositories>
         <repository>
-            <id>csc-repo</id>
-            <name>CSC's Maven repository</name>
-            <url>https://maven.csc.fi/repository/internal/</url>
+            <id>niis-repo</id>
+            <name>NIIS's Maven repository</name>
+            <url>https://artifactory.niis.org/xroad-maven-releases</url>
         </repository>
     </repositories>
     <reporting>
