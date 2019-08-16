@@ -1,6 +1,9 @@
 # X-Road Test Service
 
-X-Road Test Service is a testing tool for X-Road v6.4 and above. The implementation is based on [XRd4J](https://github.com/nordic-institute/xrd4j) library. 
+[![Go to X-Road Community Slack](https://img.shields.io/badge/Go%20to%20Community%20Slack-grey.svg)](https://jointxroad.slack.com/)
+[![Get invited](https://img.shields.io/badge/No%20Slack-Get%20invited-green.svg)](https://x-road.global/join-the-xroad-community)
+
+X-Road Test Service is a testing tool for X-Road v6.4 and above. The implementation is based on [XRd4J](https://github.com/nordic-institute/xrd4j) library.
 
 Test Service application provides a single service that takes as parameters the size of the response body and the size of the response attachment part. The size defines the number of characters in the response. For example, the below request generates a response which SOAP body contains 25 characters (see full [request](https://github.com/nordic-institute/x-road-test-service/blob/master/examples/request-1.xml)).
 
@@ -108,5 +111,5 @@ Example SOAP [response](https://github.com/nordic-institute/x-road-test-service/
 
 ## Credits
 
-* X-Road Test Service library was originally developed by Petteri Kivimäki (https://github.com/petkivim) during 2015-2018. 
+* X-Road Test Service library was originally developed by Petteri Kivimäki (https://github.com/petkivim) during 2015-2018.
 * In August 2018 it was agreed that Nordic Institute for Interoperability Solutions (NIIS) takes maintenance responsibility.
