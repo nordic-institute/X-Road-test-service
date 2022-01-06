@@ -8,15 +8,15 @@
     <name>X-Road Test Service</name>
     <inceptionYear>2018</inceptionYear>
     <description>
-        This project provides a test service for X-Road version 6.
+        This project provides a test service for X-Road versions 6 and 7.
     </description>
     <url>https://github.com/nordic-institute/x-road-test-service</url>
     <packaging>war</packaging>
     <properties>
-        <xrd4j.version>0.3.0</xrd4j.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <log4j.version>1.2.16</log4j.version>
-        <jdk.version>1.7</jdk.version>
+        <xrd4j.version>0.4.0</xrd4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <log4j.version>2.17.1</log4j.version>
+        <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     </properties>
@@ -53,8 +53,8 @@
         </dependency>
 
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
 
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>3.12.0</version>
         </dependency>
 
         <dependency>
@@ -182,7 +182,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>3.2.1</version>
+                <version>6.5.0</version>
                 <configuration>
                     <cveValidForHours>24</cveValidForHours>
                     <skip>false</skip>

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4-SNAPSHOT - 2022-01-06
+- Update XRd4J version to 0.4.0
+- Update dependencies
+
 ## 0.0.4-SNAPSHOT - 2018-09-09
 - Update XRd4J dependency from `com.pkrete.xrd4j` to `org.niis.xrd4j`
 - Update XRd4J version to 0.3.0
