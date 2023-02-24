@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.0.4-SNAPSHOT - 2023-02-21
+- Add Java 11 support
 - Update dependencies
 
 ## 0.0.4-SNAPSHOT - 2022-01-06
