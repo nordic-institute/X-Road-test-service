@@ -57,10 +57,10 @@ import java.util.Properties;
  *
  * @author Petteri Kivimäki
  */
-public class Endpoint extends AbstractAdapterServlet {
+public class TestServiceEndpoint extends AbstractAdapterServlet {
 
     private Properties props;
-    private static final Logger LOG = LoggerFactory.getLogger(Endpoint.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TestServiceEndpoint.class);
     private String namespaceSerialize;
     private String namespaceDeserialize;
     private String prefix;
@@ -68,7 +68,7 @@ public class Endpoint extends AbstractAdapterServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        LOG.debug("Starting to initialize Enpoint.");
+        LOG.debug("Starting to initialize Endpoint.");
         this.props = PropertiesUtil.getInstance().load("/test-service.properties");
         this.namespaceSerialize = this.props.getProperty("namespace.serialize");
         this.namespaceDeserialize = this.props.getProperty("namespace.deserialize");
@@ -84,14 +84,12 @@ public class Endpoint extends AbstractAdapterServlet {
      *
      * @return absolute path of the WSDL file
      */
-    @Override
     protected String getWSDLPath() {
         String path = this.props.getProperty("wsdl.path");
         LOG.debug("WSDL path : \"" + path + "\".");
         return path;
     }
 
-    @Override
     protected ServiceResponse handleRequest(ServiceRequest request) throws SOAPException, XRd4JException {
         long startTime = System.currentTimeMillis();
         ServiceResponseSerializer serializer;
@@ -212,7 +210,7 @@ public class Endpoint extends AbstractAdapterServlet {
             TestServiceRequest request = new TestServiceRequest();
             // Loop through the request
             for (int i = 0; i < requestNode.getChildNodes().getLength(); i++) {
-                // Request data is inside of "name" element
+                // Request data is inside of "responseBodySize" element
                 if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
                         && "responseBodySize".equals(requestNode.getChildNodes().item(i).getLocalName())) {
                     LOG.debug("Found \"responseBodySize\" element.");
@@ -225,7 +223,7 @@ public class Endpoint extends AbstractAdapterServlet {
                     request.setResponseAttachmentSize(requestNode.getChildNodes().item(i).getTextContent());
                 }
             }
-            LOG.warn("Return the TestServiceRequest object.");
+            LOG.debug("Return the TestServiceRequest object.");
             return request;
         }
     }
