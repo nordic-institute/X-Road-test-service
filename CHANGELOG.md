@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.0.4-SNAPSHOT - 2023-02-21
+## 0.0.4-SNAPSHOT - 2023-02-25
+- Change into a Spring Boot application.
+  - Installation package no longer installs a standalone Tomcat server
+  - Instead, the Test Service is run as a self-contained Java application, with an embedded web container
+- Change the context path from `/${project.build.finalName}` to `/test-service`
+- Update `Dockerfile` and change base image from `tomcat:alpine` to `openjdk:11`
 - Add Java 11 support
 - Update dependencies
 
