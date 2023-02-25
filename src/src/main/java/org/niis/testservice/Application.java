@@ -22,7 +22,6 @@
  */
 package org.niis.testservice;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -34,7 +33,6 @@ import org.springframework.context.annotation.Configuration;
  * X-Road test service application entry point
  */
 @Configuration
-@Slf4j
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
