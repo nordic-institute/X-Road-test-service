@@ -1,5 +1,11 @@
-# Base tomcat:alpine
-FROM tomcat:alpine
+# Base openjdk:11
+FROM openjdk:11
 
-# Add Test Service under Tomcat's webapps folder
-ADD src/target/test-service-*.war /usr/local/tomcat/webapps/
+# Add X-Road Test Service war to container
+ADD src/target/test-service-*.war test-service.war
+
+# Entry with exec
+ENTRYPOINT exec java $JAVA_OPTS -jar /test-service.war
+
+# Expose default port
+EXPOSE 8080
