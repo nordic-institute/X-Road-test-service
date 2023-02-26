@@ -95,6 +95,9 @@ public class TestServiceEndpoint extends AbstractAdapterServlet {
         ServiceResponseSerializer serializer;
         ServiceResponse<TestServiceRequest, TestServiceResponse> response;
 
+        // Remove all attachments from the request message - they're not needed
+        request.getSoapMessage().removeAllAttachments();
+
         // Process services by service code
         if ("testService".equals(request.getProducer().getServiceCode())) {
             // Process "helloService" service
