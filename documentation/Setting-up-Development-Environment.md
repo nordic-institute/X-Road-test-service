@@ -7,6 +7,7 @@ This document describes how a developer's workstation can be setup.
 * Linux / Windows / MacOS
 * Java 8 or Java 11
 * Maven 3.x
+* Docker (*optional*)
 
 ### Getting the code
 
@@ -20,7 +21,7 @@ The code is located in the ```src``` folder.
 
 ### Building the code
 
-Example Adapter uses Maven as the build management tool. In order to build the whole project and generate the war  file (`test-service-x.x.x-SNAPSHOT.war`), you must run the maven command below from the ```src``` directory.
+X-Road Test Service uses Maven as the build management tool. In order to build the whole project and generate the war  file (`test-service-x.x.x-SNAPSHOT.war`), you must run the maven command below from the ```src``` directory.
 
 ```
 mvn clean install

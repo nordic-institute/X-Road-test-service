@@ -50,6 +50,7 @@ http://localhost:8080/test-service/Endpoint?wsdl
 
 * Java 8 or Java 11
 * Maven 3.x
+* Docker (*optional*)
 
 ## Development Environment
 
@@ -112,7 +113,7 @@ http://localhost:8080/test-service/Endpoint?wsdl
 
 ## Usage
 
-Calling the service after installation when the service is running.
+This section provides examples for calling the service after it is deployed and running. The example commands require `curl` to be installed.
 
 ### testService
 
