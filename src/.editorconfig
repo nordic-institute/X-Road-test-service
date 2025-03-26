@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.java]
+indent_size = 4
+ij_continuation_indent_size  = 8
+ij_java_imports_layout = org.niis.**,|,*,|,javax.**,|,java.**,|,$*
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_names_count_to_use_import_on_demand = 999
+ij_java_blank_lines_after_imports = 1
+ij_java_blank_lines_before_imports = 1
+
+[*.{xml,xsd,gradle}]
+indent_size = 4
